@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #d63384;
+    }
+
+    .buttons {
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin: 10px;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #6c757d;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="sayYes()">Yes 💘</button>
+    <button id="noBtn" onclick="growYes()">No 🙈</button>
+  </div>
+
+  <script>
+    let size = 18;
+
+    function growYes() {
+      size += 10;
+      document.getElementById("yesBtn").style.fontSize = size + "px";
+    }
+
+    function sayYes() {
+      document.body.innerHTML = "<h1>YAYYY 💕 I can't wait!!</h1>";
+      document.body.style.background = "#ffccd5";
+    }
+  </script>
+
+</body>
+</html>
