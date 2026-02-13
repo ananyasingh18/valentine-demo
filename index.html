@@ -2,52 +2,88 @@
 <html>
 <head>
   <title>Will You Be My Valentine?</title>
+
   <style>
     body {
-      background: #ffe6f0;
+      margin: 0;
+      height: 100vh;
+      background-color: #800020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: Arial, sans-serif;
+      color: #f5f5dc;
       text-align: center;
-      margin-top: 150px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #d63384;
-    }
-
-    .buttons {
-      margin-top: 40px;
+      margin-bottom: 40px;
+      color: #f5f5dc;
     }
 
     button {
       padding: 15px 30px;
-      font-size: 18px;
+      margin: 10px;
+      border-radius: 40px;
       border: none;
-      border-radius: 30px;
       cursor: pointer;
       transition: 0.3s ease;
-      margin: 10px;
     }
 
     #yesBtn {
-      background-color: #ff4d6d;
-      color: white;
+      background-color: #f5f5dc;
+      color: #800020;
+      font-size: 18px;
     }
 
     #noBtn {
-      background-color: #6c757d;
-      color: white;
+      background-color: #333;
+      color: #f5f5dc;
+      font-size: 18px;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #envelopeImage {
+      max-width: 400px;
+      width: 80%;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Will you be my Valentine? 💖</h1>
+  <div class="container" id="content">
+    <h1>Will you be my Valentine? 💌</h1>
 
-  <div class="buttons">
-    <button id="yesBtn" onclick="sayYes()">Yes 💘</button>
-    <button id="noBtn" onclick="growYes()">No 🙈</button>
+    <div>
+      <button id="yesBtn" onclick="sayYes()">Yes 💘</button>
+      <button id="noBtn" onclick="growYes()">No 🙈</button>
+    </div>
+
+    <img id="envelopeImage" src="envelope.png" alt="Love Letter">
   </div>
 
   <script>
@@ -59,8 +95,11 @@
     }
 
     function sayYes() {
-      document.body.innerHTML = "<h1>YAYYY 💕 I can't wait!!</h1>";
-      document.body.style.background = "#ffccd5";
+      document.querySelector("h1").style.display = "none";
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
+
+      document.getElementById("envelopeImage").style.display = "block";
     }
   </script>
 
